@@ -87,14 +87,14 @@ body {
   .item1 {
     border-radius: 5px 5px 0 0;
     grid-column: span 12;
-    background-color: $white;
+    background-color: #333;
     padding: 40px 75px 40px 35px;
     -webkit-border-radius: 5px 5px 0 0;
     -moz-border-radius: 5px 5px 0 0;
     -ms-border-radius: 5px 5px 0 0;
     -o-border-radius: 5px 5px 0 0;
     h1 {
-      @include text($cyan, 1.2rem, 400);
+      @include text($cyan, 1.5rem, bold);
     }
     p:nth-child(2) {
       @include text($brightYellow, 1.1rem, bold);
@@ -177,7 +177,7 @@ padding: 50px 0;
     .item1 {
       padding: 40px 30px;
       h1 {
-        @include text($cyan, 1.8rem, 400);
+        @include text($cyan, 1.8rem, bold);
       }
       p:nth-child(2) {
         @include text($brightYellow, 1.3rem, bold);
@@ -196,12 +196,13 @@ padding: 50px 0;
         @include text($white, 1.6rem, bold);
       }
       p:nth-child(2) {
+        @include text(#ccc, 1rem, 400);
         span {
           @include text($white, 2.5rem, bold);
         }
       }
       p:nth-child(3) {
-        @include text($lightGray, 1.4rem, 400);
+        @include text($lightGray, 1.2rem, 400);
       }
     }
 
