@@ -206,5 +206,49 @@ body h3 {
     font-weight: 400;
   }
 }
+@media (max-width: 576px) {
+  body {
+    padding: 50px 0;
+    height: 100%;
+  }
+  body .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  body .container .item1 {
+    padding: 40px 30px;
+  }
+  body .container .item1 h1 {
+    color: #2ab2af;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  body .container .item1 p:nth-child(2) {
+    color: #c0df34;
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+  body .container .item1 p:last-child {
+    line-height: 1.5rem;
+  }
+  body .container .item2 {
+    grid-column: span 12;
+    padding: 30px;
+  }
+  body .container .item2 p:nth-child(2) span {
+    color: #fff;
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+  body .container .item3 {
+    grid-column: span 12;
+    padding: 30px;
+  }
+  body .container footer {
+    color: #333;
+    font-size: 0.6rem;
+    font-weight: 400;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */

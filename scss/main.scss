@@ -14,7 +14,8 @@ $font-family: "Karla", sans-serif;
 $font-size: 16px;
 
 //mobile
-$mobile: 376px;
+$mobile-376: 376px;
+$mobile-576: 576px;
 
 // mixin
 // text
@@ -36,8 +37,13 @@ $mobile: 376px;
 }
 
 // responsive
-@mixin mobile {
-  @media (max-width: $mobile) {
+@mixin mobile-376 {
+  @media (max-width: $mobile-376) {
+    @content;
+  }
+}
+@mixin mobile-576 {
+  @media (max-width: $mobile-576) {
     @content;
   }
 }
@@ -164,7 +170,7 @@ body {
   }
 }
 //responsive for mobile
-@include mobile {
+@include mobile-376 {
   body {
     height: 100%;
     padding: 50px 0;
@@ -219,4 +225,49 @@ body {
       }
     }
   }
+}
+@include mobile-576 {
+  body{
+    padding: 50px 0;
+    height: 100%;
+  
+  //container
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    // item 1
+    .item1 {
+      padding: 40px 30px;
+      h1 {
+        @include text($cyan, 1.3rem, bold);
+      }
+      p:nth-child(2) {
+        @include text($brightYellow, 0.9rem, bold);
+      }
+      p:last-child {
+        line-height: 1.5rem;
+      }
+    }
+
+    // item2
+    .item2 {
+      grid-column: span 12;
+      padding: 30px;
+      p:nth-child(2) {
+        span {
+          @include text($white, 2.2rem, bold);
+        }
+      }
+    }
+
+    // item3
+    .item3 {
+      grid-column: span 12;
+      padding: 30px;
+    }
+    footer {
+      @include text(#333, 0.6rem, 400);
+    }
+  }
+}
 }
