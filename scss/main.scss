@@ -1,0 +1,223 @@
+// Primary color
+$cyan: #2ab2af;
+$cyan2: #2fc2bf;
+$brightYellow: #c0df34;
+
+//Neutral color
+$lightGray: #e5eff5;
+$white: #fff;
+$grayishBlue: #98a6bd;
+//Font family
+$font-family: "Karla", sans-serif;
+
+//Font size
+$font-size: 16px;
+
+//mobile
+$mobile: 568px;
+
+// mixin
+// text
+@mixin text($color, $fontSize, $fontWeight) {
+  color: $color;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+}
+// button
+@mixin button($py, $px, $bgColor, $borderRadius, $border) {
+  padding: $py $px;
+  background-color: $bgColor;
+  border: 1px solid $border;
+  border-radius: $borderRadius;
+  -webkit-border-radius: $borderRadius;
+  -moz-border-radius: $borderRadius;
+  -ms-border-radius: $borderRadius;
+  -o-border-radius: $borderRadius;
+}
+
+// responsive
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+//global
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+  font-size: $font-size;
+  background-color: $lightGray;
+  display: -webkit-box; /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox; /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h1,
+  h4,
+  h3 {
+    -webkit-margin-before: 0;
+    margin-block-start: 0;
+    -webkit-margin-after: 0;
+    margin-block-end: 0;
+  }
+}
+// main
+.container {
+  border-radius: 5px;
+  width: 50%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  box-shadow: 0 0 20px lighten($grayishBlue, 10%);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+
+  // item1
+  .item1 {
+    border-radius: 5px 5px 0 0;
+    grid-column: span 12;
+    background-color: $white;
+    padding: 40px 75px 40px 35px;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+    -ms-border-radius: 5px 5px 0 0;
+    -o-border-radius: 5px 5px 0 0;
+    h1 {
+      @include text($cyan, 1.2rem, 400);
+    }
+    p:nth-child(2) {
+      @include text($brightYellow, 1.1rem, bold);
+      padding: 20px 0 10px 0;
+    }
+    p:last-child {
+      @include text($grayishBlue, 0.9rem, 400);
+      line-height: 2rem;
+    }
+  }
+
+  //item2
+  .item2 {
+    padding: 40px;
+    grid-column: span 6;
+    background-color: $cyan;
+    line-height: 2.5rem;
+    h4 {
+      @include text($white, 1.1rem, bold);
+    }
+
+    p:nth-child(2) {
+      @include text(#ccc, 0.9rem, 400);
+      span {
+        vertical-align: middle;
+        @include text($white, 1.7rem, bold);
+        margin-right: 8px;
+      }
+    }
+    p:nth-child(3) {
+      @include text($lightGray, 0.9rem, 400);
+    }
+    button {
+      @include text($white, 0.8rem, 700);
+      @include button(15px, 20px, $brightYellow, 5px, $brightYellow);
+      width: 100%;
+      margin-top: 1rem;
+      box-shadow: 0 0 20px $grayishBlue;
+      cursor: pointer;
+    }
+  }
+
+  // item3
+  .item3 {
+    grid-column: span 6;
+    background-color: $cyan2;
+    padding: 40px;
+    & > p {
+      @include text($lightGray, 0.8rem, 400);
+      line-height: 1.3rem;
+    }
+    h3 {
+      @include text($white, 1.1rem, bold);
+      margin: 0.5rem 0 1rem 0;
+    }
+  }
+  footer {
+    border-radius: 0 0 5px 5px;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    -ms-border-radius: 0 0 5px 5px;
+    -o-border-radius: 0 0 5px 5px;
+    grid-column: span 12;
+    text-align: center;
+    @include text(#333, 0.9rem, 400);
+    background-color: $lightGray;
+  }
+}
+//responsive for mobile
+@include mobile {
+body{
+ height: 100%;
+padding: 50px 0;
+
+  //container
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    // item 1
+    .item1 {
+      padding: 40px 30px;
+      h1 {
+        @include text($cyan, 1.8rem, 400);
+      }
+      p:nth-child(2) {
+        @include text($brightYellow, 1.3rem, bold);
+      }
+      p:last-child {
+        @include text($grayishBlue, 1.2rem, 400);
+      }
+    }
+
+    // item2
+    .item2 {
+      grid-column: span 12;
+      padding: 30px;
+      line-height: 3.5rem;
+      h4 {
+        @include text($white, 1.6rem, bold);
+      }
+      p:nth-child(2) {
+        span {
+          @include text($white, 2.5rem, bold);
+        }
+      }
+      p:nth-child(3) {
+        @include text($lightGray, 1.4rem, 400);
+      }
+    }
+
+    // item3
+    .item3 {
+      grid-column: span 12;
+      padding: 30px;
+      & > p {
+        @include text($lightGray, 1rem, 400);
+        line-height: 1.8rem;
+      }
+      h3 {
+        @include text($white, 1.6rem, bold);
+      }
+    }
+  }
+}
+
+}
