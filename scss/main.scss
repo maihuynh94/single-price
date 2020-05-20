@@ -107,7 +107,7 @@ body {
       padding: 20px 0 10px 0;
     }
     p:last-child {
-      @include text($grayishBlue, 1rem, 400);
+      @include text($grayishBlue, .9rem, 400);
       line-height: 2rem;
     }
   }
