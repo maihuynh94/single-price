@@ -14,7 +14,7 @@ $font-family: "Karla", sans-serif;
 $font-size: 16px;
 
 //mobile
-$mobile-376: 376px;
+$mobile-315: 315px;
 $mobile-576: 576px;
 
 // mixin
@@ -37,8 +37,8 @@ $mobile-576: 576px;
 }
 
 // responsive
-@mixin mobile-376 {
-  @media (max-width: $mobile-376) {
+@mixin mobile-315 {
+  @media (max-width: $mobile-315) {
     @content;
   }
 }
@@ -170,7 +170,7 @@ body {
   }
 }
 //responsive for mobile
-@include mobile-376 {
+@include mobile-315 {
   body {
     height: 100%;
     padding: 50px 0;
@@ -183,7 +183,7 @@ body {
       .item1 {
         padding: 40px 30px;
         h1 {
-          @include text($cyan, 1.2rem, bold);
+          @include text($cyan, 1.1rem, bold);
         }
         p:nth-child(2) {
           @include text($brightYellow, 0.8rem, bold);
