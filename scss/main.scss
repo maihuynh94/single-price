@@ -133,9 +133,12 @@ body {
     p:nth-child(3) {
       @include text($lightGray, 0.9rem, 400);
     }
-    button {
+    .button {
       @include text($white, 0.8rem, 700);
-      @include button(15px, 20px, $brightYellow, 5px, $brightYellow);
+      @include button(7, 15px, $brightYellow, 5px, $brightYellow);
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
       width: 100%;
       margin-top: 1rem;
       box-shadow: 0 0 20px $grayishBlue;
